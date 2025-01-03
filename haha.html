@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz with Redirect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .quiz {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .response {
+            margin-top: 20px;
+            font-size: 18px;
+            color: red;
+        }
+    </style>
+    <script>
+        function checkAnswer() {
+            const correctAnswer = "5"; // Replace with your correct answer
+            const userAnswer = document.getElementById('answer').value.trim();
+            if (userAnswer === correctAnswer) {
+                window.location.href = 'https://iloverhianne.github.io/jb/rhi.html'; // Replace with your desired URL
+            } else {
+                document.getElementById('response').textContent = 'Incorrect answer. Please try again!';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="quiz">
+        When did I become your boyfriend? <!-- Replace with your question -->
+    </div>
+    <input type="text" id="answer" placeholder="Your answer">
+    <button onclick="checkAnswer()">Submit</button>
+    <div id="response" class="response"></div>
+</body>
+</html>
